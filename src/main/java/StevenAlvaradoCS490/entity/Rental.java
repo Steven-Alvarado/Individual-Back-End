@@ -3,14 +3,7 @@ package StevenAlvaradoCS490.entity;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Jointable;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,13 +19,26 @@ public class Rental{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long rental_id;
-    private LocalDateTime rental_date;
-    private Long inventory_id;
-    private Long customer_id;
-    private LocalDateTime return_date;
+
+    @Column(name = "rental_id")
+    private Long rentalId;
+
+
+    @Column(name = "rental_date")
+    private LocalDateTime rentalDate;
+
+    @Column(name = "inventory_id")
+    private Long inventoryId;
+
+    @Column(name = "customer_id")
+    private Long customerId;
+
+    @Column(name = "return_date")
+    private LocalDateTime returnDate;
     //private Long staff_id;
-    private LocalDateTime last_update;
+
+    @Column(name = "last_update")
+    private LocalDateTime lastUpdate;
 
     @ManyToOne
     @JoinColumn(name = "inventory_id")

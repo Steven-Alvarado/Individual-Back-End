@@ -1,13 +1,17 @@
 package StevenAlvaradoCS490.controller;
 
 import lombok.AllArgsConstructor;
-import StevenAlvaradCS490.service.FilmService;
-import StevenAlvaradCS490.entity.Film;
-import StevenAlvaradCS490.dto.FilmDto;;
+import StevenAlvaradoCS490.service.FilmService;
+import StevenAlvaradoCS490.entity.Film;
+import StevenAlvaradoCS490.dto.FilmDto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+
+import java.util.List;
 
 @AllArgsConstructor
 @RestController

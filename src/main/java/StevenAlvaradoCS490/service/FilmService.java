@@ -1,4 +1,4 @@
-package StevenAlvaradoCS90.service;
+package StevenAlvaradoCS490.service;
 
 import StevenAlvaradoCS490.entity.Film;
 import StevenAlvaradoCS490.dto.FilmDto;

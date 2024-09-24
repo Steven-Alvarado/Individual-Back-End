@@ -6,25 +6,28 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 
 public class FilmDto{
-    
-    private Long film_id; 
+
+    private Long filmId;
     private String title;
     private String description;
-    private String release_year;
-    private Long language_id;
-    private Long original_language_id;
-    private Long rental_duration;
-    private BigDecimal rental_rate;
+    private String releaseYear;
+    private Long languageId;
+    private Long originalLanguageId;
+    private Long rentalDuration;
+    private BigDecimal rentalRate;
     private int length;
-    private BigDecimal replacement_cost;
+    private BigDecimal replacementCost;
     private String rating;
-    private String special_features;
-    private LocalDateTime last_update;
+    private String specialFeatures;
+    private LocalDateTime lastUpdate;
 
 }

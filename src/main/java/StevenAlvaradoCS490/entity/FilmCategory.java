@@ -4,12 +4,7 @@ package StevenAlvaradoCS490.entity;
 import java.time.LocalDateTime;
 import java.io.Serializable;
 
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
-import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,16 +18,19 @@ import lombok.EqualsAndHashCode;
 @AllArgsConstructor
 @Entity
 @Table(name = "film_category")
-@IdClass(FilmCategoryId.class)
-public class FilmActor implements Serializable{
+@IdClass(FilmCategory.FilmCategoryId.class)
+public class FilmCategory implements Serializable{
 
     @Id
-    private Long film_id;
+    @Column(name = "film_id")
+    private Long filmId;
 
     @Id
-    private Long category_id;
+    @Column(name = "category_id")
+    private Long categoryId;
 
-    private LocalDateTime last_update;    
+    @Column(name = "last_update")
+    private LocalDateTime lastUpdate;
 
     @Getter
     @Setter
@@ -40,7 +38,11 @@ public class FilmActor implements Serializable{
     @AllArgsConstructor
     @EqualsAndHashCode
     public static class FilmCategoryId implements Serializable{
-        private Long film_id;
-        private Long category_id;
+
+        @Column(name = "film_id")
+        private Long filmId;
+
+        @Column(name = "category_id")
+        private Long categoryId;
     }
 }

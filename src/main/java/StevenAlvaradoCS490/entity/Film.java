@@ -1,15 +1,9 @@
 package StevenAlvaradoCS490.entity;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Jointable;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,26 +14,43 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "FILM")
-public class Film{
+@Table(name = "film")
+public class Film {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long film_id;
-
+    @Column(name = "film_id")
+    private Long filmId;
 
     private String title;
     private String description;
-    private String release_year;
-    private Long language_id;
-    private Long original_language_id;
-    private Long rental_duration;
-    private BigDecimal rental_rate;
+
+    @Column(name = "release_year")
+    private String releaseYear;
+
+    @Column(name = "language_id")
+    private Long languageId;
+
+    @Column(name = "original_language_id")
+    private Long originalLanguageId;
+
+    @Column(name = "rental_duration")
+    private Long rentalDuration;
+
+    @Column(name = "rental_rate")
+    private BigDecimal rentalRate;
+
     private int length;
-    private BigDecimal replacement_cost;
-    private String rating; 
-    private String special_features;
-    private LocalDateTime last_update;
+    @Column(name = "replacement_cost")
+    private BigDecimal replacementCost;
+
+    private String rating;
+
+    @Column(name = "special_features")
+    private String specialFeatures;
+
+    @Column(name = "last_update")
+    private LocalDateTime lastUpdate;
 
     // Relationships
     @ManyToMany(mappedBy = "films")
@@ -54,4 +65,7 @@ public class Film{
 
     @OneToMany(mappedBy = "film")
     private List<Inventory> inventories;
+
+    public Film(Long filmId, String title, String description, String releaseYear, Long languageId, Long originalLanguageId, Long rentalDuration, BigDecimal rentalRate, int length, BigDecimal replacementCost, String rating, String specialFeatures, LocalDateTime lastUpdate) {
+    }
 }

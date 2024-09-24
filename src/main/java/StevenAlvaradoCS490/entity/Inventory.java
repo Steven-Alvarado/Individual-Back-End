@@ -1,16 +1,9 @@
 package StevenAlvaradoCS490.entity;
 
-import java.math.BigDecimal;
+
 import java.time.LocalDateTime;
 
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Jointable;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,10 +19,17 @@ public class Inventory{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long inventory_id;
-    private Long film_id;
-    private Long store_id;
-    private LocalDateTime last_update;
+    @Column(name = "inventory_id")
+    private Long inventoryId;
+
+    @Column(name = "film_id")
+    private Long filmId;
+
+    @Column(name = "store_id")
+    private Long storeId;
+
+    @Column(name = "last_update")
+    private LocalDateTime lastUpdate;
 
     @ManyToOne
     @JoinColumn(name = "film_id")

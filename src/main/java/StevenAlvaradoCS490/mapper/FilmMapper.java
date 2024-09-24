@@ -1,10 +1,11 @@
-package StevenAlvaradoCS90.mapper;
+package StevenAlvaradoCS490.mapper;
 
 import StevenAlvaradoCS490.dto.FilmDto;
+import StevenAlvaradoCS490.entity.Film;
 
 public class FilmMapper{
 
-    public static FilmDto mapToFilmDto(Film film){
+    public FilmDto mapToFilmDto(Film film){
         return new FilmDto(
             film.getFilmId(),
             film.getTitle(),

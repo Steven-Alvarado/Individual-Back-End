@@ -2,15 +2,9 @@ package StevenAlvaradoCS490.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Jointable;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,10 +20,15 @@ public class Actor{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long actor_id;
-    private String first_name;
-    private String last_name;
-    private LocalDateTime last_update;
+    @Column(name = "actor_id")
+    private Long actorId;
+
+    @Column(name = "first_name")
+    private String firstName;
+    @Column(name = "last_name")
+    private String lastName;
+    @Column(name = "last_update")
+    private LocalDateTime lastUpdate;
 
     @ManyToMany
     @JoinTable(

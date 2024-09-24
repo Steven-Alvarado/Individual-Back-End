@@ -1,16 +1,10 @@
 package StevenAlvaradoCS490.entity;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Jointable;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
+import java.time.LocalDateTime;
+import java.util.List;
+
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,9 +20,11 @@ public class Category{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long category_id;
+    @Column(name = "category_id")
+    private Long categoryId;
     private String name;
-    private LocalDateTime last_update;
+    @Column(name = "last_update")
+    private LocalDateTime lastUpdate;
 
     @ManyToMany(mappedBy = "categories")
     private List<Film> films;

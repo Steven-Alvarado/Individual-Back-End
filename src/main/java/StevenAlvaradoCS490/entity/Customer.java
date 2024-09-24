@@ -3,14 +3,10 @@ package StevenAlvaradoCS490.entity;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.LocalDate;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Jointable;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
+import java.util.List;
+
+import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,15 +22,22 @@ public class Customer{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long customer_id;
-    private Long store_id;
-    private String first_name;
-    private String last_name;
+    @Column(name = "customer_id")
+    private Long customerId;
+    @Column(name = "store_id")
+    private Long storeId;
+    @Column(name = "first_name")
+    private String firstName;
+    @Column(name = "last_name")
+    private String lastName;
     private String email;
-    private Long address_id;
+    @Column(name = "address_id")
+    private Long addressId;
     private char active;
-    private LocalDate create_date;
-    private LocalDateTime last_update;
+    @Column(name = "create_date")
+    private LocalDate createDate;
+    @Column(name = "last_update")
+    private LocalDateTime lastUpdate;
 
 
 

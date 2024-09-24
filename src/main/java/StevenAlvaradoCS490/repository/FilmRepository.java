@@ -1,13 +1,13 @@
 package StevenAlvaradoCS490.repository;
 
 import StevenAlvaradoCS490.entity.Film;
-import StevenAlvaradoCS490.dto.FilmDto;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface FilmRepository extends JpaRepository<Film, Long> {
@@ -19,8 +19,7 @@ public interface FilmRepository extends JpaRepository<Film, Long> {
                    "group by f.film_id , f.title " + 
                    "order by rented desc " +
                    "limit 5", nativeQuery = true)
-    
-    List<FilmDto> findTop5RentedFilms();
+    List<Film> findTop5RentedFilms();
 
     //fetch all details of film by id
     Optional<Film> findByID(Long id);

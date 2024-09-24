@@ -5,10 +5,7 @@ import java.time.LocalDateTime;
 import java.io.Serializable;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
+import jakarta.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,26 +20,30 @@ import lombok.EqualsAndHashCode;
 @AllArgsConstructor
 @Entity
 @Table(name = "film_actor")
-@IdClass(FilmActorId.class)
+@IdClass(FilmActor.FilmActorId.class)
 public class FilmActor implements Serializable{
 
     @Id
-    private Long actor_id;
+    @Column(name = "actor_id")
+    private Long actorId;
 
     @Id
-    private Long film_id;
+    @Column(name = "film_id")
+    private Long filmId;
 
-    private LocalDateTime last_update;    
+    @Column(name = "last_update")
+    private LocalDateTime lastUpdate;
 
-    // TODO: Create composite key class
     @Getter
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
     @EqualsAndHashCode
     public static class FilmActorId implements Serializable{
-        private Long actor_id;
-        private Long film_id;
+        @Column(name = "actor_id")
+        private Long actorId;
+        @Column(name = "film_id")
+        private Long filmId;
     }
 }
 
