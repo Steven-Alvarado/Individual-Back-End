@@ -2,6 +2,9 @@ package StevenAlvaradoCS490.entity;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Jointable;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -37,5 +40,18 @@ public class Film{
     private String rating; 
     private String special_features;
     private LocalDateTime last_update;
-    
+
+    // Relationships
+    @ManyToMany(mappedBy = "films")
+    private List<Actor> actors;
+
+    @ManyToMany
+    @JoinTable(
+        name = "film_category",
+        joinColumns = @JoinColumn(name = "film_id"),
+        inverseJoinColumns = @JoinColumn(name = "category_id"))
+    private List<Category> categories;
+
+    @OneToMany(mappedBy = "film")
+    private List<Inventory> inventories;
 }
