@@ -2,17 +2,20 @@ package StevenAlvaradoCS490.entity;
 
 
 import java.time.LocalDateTime;
+import java.io.Serializable;
 
-import jakarta.persistence.GenerationType;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.IdClass;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.io.Serializable;
+import lombok.EqualsAndHashCode;
+
 
 @Getter
 @Setter
@@ -32,6 +35,15 @@ public class FilmActor implements Serializable{
     private LocalDateTime last_update;    
 
     // TODO: Create composite key class
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @EqualsAndHashCode
+    public static class FilmActorId implements Serializable{
+        private Long actor_id;
+        private Long film_id;
+    }
 }
 
 
