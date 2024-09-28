@@ -19,7 +19,7 @@ public interface FilmRepository extends JpaRepository<Film, Long> {
                    "group by f.film_id , f.title " + 
                    "order by rented desc " +
                    "limit 5", nativeQuery = true)
-    List<Film> findTop5RentedFilms();
+    List<Film> getTop5RentedFilms();
 
     //fetch all details of film by id
     Optional<Film> findByID(Long id);
