@@ -1,4 +1,4 @@
-package StevenAlvaradoCS490.Individual_Back_End;
+package StevenAlvaradoCS490;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

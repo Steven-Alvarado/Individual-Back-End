@@ -1,4 +1,4 @@
-package StevenAlvaradoCS490.Individual_Back_End;
+package StevenAlvaradoCS490;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
