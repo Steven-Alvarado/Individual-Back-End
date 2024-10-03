@@ -1,9 +1,13 @@
 /home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/IndividualBackEndApplication.java
 /home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/controller/CustomerController.java
+/home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/controller/FilmController.java
 /home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/dto/CustomerDto.java
+/home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/dto/FilmDto.java
 /home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/entity/Customer.java
+/home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/entity/Film.java
 /home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/exception/ResourceNotFoundException.java
 /home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/mapper/CustomerMapper.java
+/home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/mapper/FilmMapper.java
 /home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/repository/CustomerRepository.java
 /home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/service/CustomerService.java
 /home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/service/impl/CustomerServiceImpl.java
