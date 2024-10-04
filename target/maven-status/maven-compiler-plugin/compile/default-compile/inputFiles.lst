@@ -9,5 +9,8 @@
 /home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/mapper/CustomerMapper.java
 /home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/mapper/FilmMapper.java
 /home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/repository/CustomerRepository.java
+/home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/repository/FilmRepository.java
 /home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/service/CustomerService.java
+/home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/service/FilmService.java
 /home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/service/impl/CustomerServiceImpl.java
+/home/steven/University/Fall24/CS490 Software Engineering/IndividualProject/Individual-Back-End/src/main/java/StevenAlvaradoCS490/service/impl/FilmServiceImpl.java

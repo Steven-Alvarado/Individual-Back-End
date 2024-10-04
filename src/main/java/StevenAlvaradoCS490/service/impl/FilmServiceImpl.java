@@ -19,13 +19,6 @@ public class FilmServiceImpl implements FilmService {
     private FilmRepository filmRepository;
 
     @Override
-    public FilmDto createFilm(FilmDto filmDto) {
-        Film film = FilmMapper.mapToFilm(filmDto);
-        Film savedFilm = filmRepository.save(film);
-        return FilmMapper.mapToFilmDto(savedFilm);
-    }
-
-    @Override
     public FilmDto getFilmById(Integer filmId) {
         Film film = filmRepository.findById(filmId)
                 .orElseThrow(() -> new ResourceNotFoundException("Film not found for ID: " + filmId));
@@ -40,31 +33,7 @@ public class FilmServiceImpl implements FilmService {
                 .collect(Collectors.toList());
     }
 
-    @Override
-    public FilmDto updateFilm(Integer filmId, FilmDto updatedFilm) {
-        Film film = filmRepository.findById(filmId)
-                .orElseThrow(() -> new ResourceNotFoundException("Film not found for ID: " + filmId)
-        );
-        // TODO
-        film.setFirstName(updatedFilm.getFirstName());
-        film.setLastName(updatedFilm.getLastName());
-        film.setEmail(updatedFilm.getEmail());
-        film.setActive(updatedFilm.getActive());
-        film.setAddressId(updatedFilm.getAddressId());
-        film.setLastUpdate(updatedFilm.getLastUpdate());
 
-        Film updatedFilmObj = filmRepository.save(film);
-        return FilmMapper.mapToFilmDto(updatedFilmObj);
-    }
-
-
-    @Override
-    public void deleteFilm(Integer filmId) {
-        Film film = filmRepository.findById(filmId).orElseThrow(
-                () -> new ResourceNotFoundException("Film not found for ID: " + filmId)
-        );
-
-        filmRepository.deleteById(filmId);
-    }
 }
+
 

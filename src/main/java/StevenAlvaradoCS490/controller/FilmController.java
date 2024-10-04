@@ -17,13 +17,6 @@ public class FilmController {
 
     private FilmService filmService;
 
-    //POST create film REST API
-    @PostMapping
-    public ResponseEntity<FilmDto> createFilm(@RequestBody FilmDto filmDto) {
-        FilmDto savedFilm = filmService.createFilm(filmDto);
-        return new ResponseEntity<>(savedFilm, HttpStatus.CREATED);
-    }
-
     //GET film REST API
     @GetMapping("{film_id}")
     public ResponseEntity<FilmDto> getFilmById(@PathVariable("film_id") Integer filmId) {
@@ -38,19 +31,6 @@ public class FilmController {
         return ResponseEntity.ok(films);
     }
 
-    //PUT update film REST API
-    @PutMapping("{film_id}")
-    public ResponseEntity<FilmDto> updateFilm(@PathVariable("film_id") Integer filmId,
-                                                      @RequestBody FilmDto updatedFilm) {
-        FilmDto filmDto = filmService.updateFilm(filmId, updatedFilm);
-        return ResponseEntity.ok(filmDto);
-    }
 
-    //DELETE film REST API
-    @DeleteMapping("{film_id}")
-    public ResponseEntity<String> deleteFilm(@PathVariable("film_id") Integer filmId) {
-        filmService.deleteFilm(filmId);
-        return ResponseEntity.ok("Film with ID: " + filmId + " deleted successfully");
-    }
 }
 
