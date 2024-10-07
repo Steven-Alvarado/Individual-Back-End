@@ -1,12 +1,12 @@
 package StevenAlvaradoCS490.dto;
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -15,13 +15,13 @@ import java.time.LocalDateTime;
 public class CustomerDto {
 
     private Integer customerId;
-    private Short storeId;
+    private Integer storeId;
     private String firstName;
     private String lastName;
     private String email;
     private Integer addressId;
-    private Short active;
-    private LocalDateTime creatDate;
+    private List<RentalDto> rentals;
+    private LocalDateTime createDate;
     private LocalDateTime lastUpdate;
 }
 

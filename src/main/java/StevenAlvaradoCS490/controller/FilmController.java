@@ -31,6 +31,12 @@ public class FilmController {
         return ResponseEntity.ok(films);
     }
 
+    //GET top 5 movies
+    @GetMapping("/top5")
+    public ResponseEntity<List<FilmDto>> getTop5RentedFilms() {
+        List<FilmDto> topFilms = filmService.getTop5RentedFilms();
+        return ResponseEntity.ok(topFilms);
+    }
 
 }
 

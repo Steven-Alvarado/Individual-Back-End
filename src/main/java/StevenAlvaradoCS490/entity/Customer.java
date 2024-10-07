@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -21,18 +22,29 @@ public class Customer {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "customer_id")
         private Integer customerId;
-        @Column(name = "store_id", nullable = false)
-        private Short storeId;
+
+        @ManyToOne
+        @JoinColumn(name = "store_id")
+        private Store store;
+
         @Column(name = "first_name")
         private String firstName;
+
         @Column(name = "last_name")
         private String lastName;
+
         private String email;
-        @Column(name = "address_id", nullable = false)
-        private Integer addressId;
-        private Short active;
+
+        @ManyToOne
+        @JoinColumn(name= "address_id")
+        private Address address;
+
+        @OneToMany(mappedBy= "customer")
+        private List<Rental> rentals;
+
         @Column(name = "create_date")
         private LocalDateTime createDate;
+
         @Column(name = "last_update")
         private LocalDateTime lastUpdate;
 

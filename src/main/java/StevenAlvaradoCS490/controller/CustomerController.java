@@ -20,8 +20,8 @@ public class CustomerController {
     //POST create customer REST API
     @PostMapping
     public ResponseEntity<CustomerDto> createCustomer(@RequestBody CustomerDto customerDto) {
-        CustomerDto savedCustomer = customerService.createCustomer(customerDto);
-        return new ResponseEntity<>(savedCustomer, HttpStatus.CREATED);
+        CustomerDto createdCustomer = customerService.createCustomer(customerDto);
+        return new ResponseEntity<>(createdCustomer, HttpStatus.CREATED);
     }
 
     //GET customer REST API

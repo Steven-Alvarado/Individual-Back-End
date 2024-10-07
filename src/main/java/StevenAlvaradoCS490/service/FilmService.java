@@ -11,6 +11,9 @@ public interface FilmService {
     FilmDto getFilmById(Integer id);
 
     List<FilmDto> getAllFilms();
-    
+
+    Film mapToEntity(FilmDto filmDto);
+
+    List<FilmDto> getTop5RentedFilms();
 }
 
