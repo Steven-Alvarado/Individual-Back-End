@@ -1,7 +1,7 @@
 StevenAlvaradoCS490/controller/FilmController.class
 StevenAlvaradoCS490/mapper/FilmMapper.class
+StevenAlvaradoCS490/entity/Film.class
+StevenAlvaradoCS490/repository/FilmRepository.class
 StevenAlvaradoCS490/service/impl/FilmServiceImpl.class
 StevenAlvaradoCS490/dto/FilmDto.class
-StevenAlvaradoCS490/entity/Film.class
 StevenAlvaradoCS490/service/FilmService.class
-StevenAlvaradoCS490/repository/FilmRepository.class
