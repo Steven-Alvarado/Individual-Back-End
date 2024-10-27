@@ -6,4 +6,6 @@ import StevenAlvaradoCS490.entity.Rental;
 public interface RentalService {
 
     Rental rentMovieToCustomer(RentalRequestDto rentalRequest);
+
+    Rental returnFilm(Integer returnDto);
 }

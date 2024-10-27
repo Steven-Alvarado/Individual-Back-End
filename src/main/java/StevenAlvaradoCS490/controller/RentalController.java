@@ -1,6 +1,8 @@
 package StevenAlvaradoCS490.controller;
 
+import StevenAlvaradoCS490.dto.RentalDto;
 import StevenAlvaradoCS490.dto.RentalRequestDto;
+import StevenAlvaradoCS490.dto.ReturnDto;
 import StevenAlvaradoCS490.entity.Rental;
 import StevenAlvaradoCS490.service.RentalService;
 import lombok.AllArgsConstructor;
@@ -19,5 +21,11 @@ public class RentalController {
     public ResponseEntity<Rental> rentMovieToCustomer( @RequestBody RentalRequestDto rentalRequest) {
         Rental rental = rentalService.rentMovieToCustomer(rentalRequest);
         return ResponseEntity.ok(rental);
+    }
+
+    @PutMapping("/return")
+    public ResponseEntity<Rental> returnFilm(@RequestBody ReturnDto returnDto) {
+        Rental updatedRental = rentalService.returnFilm(returnDto.getRentalId());
+        return ResponseEntity.ok(updatedRental);
     }
 }

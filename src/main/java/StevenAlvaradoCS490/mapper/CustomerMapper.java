@@ -29,6 +29,8 @@ public class CustomerMapper {
                 customer.getAddress() != null ? customer.getAddress().getAddress() : null,  // Street
                 customer.getAddress() != null && customer.getAddress().getCity() != null
                         ? customer.getAddress().getCity().getCity() : null,                // City
+                customer.getAddress() != null && customer.getAddress().getDistrict() != null
+                    ? customer.getAddress().getDistrict() : null,
                 customer.getAddress() != null && customer.getAddress().getCity() != null &&
                         customer.getAddress().getCity().getCountry() != null
                         ? customer.getAddress().getCity().getCountry().getCountry() : null, // Country

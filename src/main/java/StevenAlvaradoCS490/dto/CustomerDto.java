@@ -21,6 +21,7 @@ public class CustomerDto {
     private String email;
     private String address;
     private String city;
+    private String district;
     private String country;
     private String postalCode;
     private String phone;

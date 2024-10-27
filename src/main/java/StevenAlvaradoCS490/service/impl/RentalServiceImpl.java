@@ -55,4 +55,18 @@ public class RentalServiceImpl implements RentalService {
 
         return rentalRepository.save(rental);
     }
+
+    @Override
+    public Rental returnFilm(Integer rentalId) {
+        // Find the rental by ID
+        Rental rental = rentalRepository.findById(rentalId)
+                .orElseThrow(() -> new RuntimeException("Rental not found with ID: " + rentalId));
+
+        // Update the return date
+        rental.setReturnDate(LocalDateTime.now());
+        rental.setLastUpdate(LocalDateTime.now()); // Update last update timestamp
+
+        // Save and return the updated rental
+        return rentalRepository.save(rental);
+    }
 }

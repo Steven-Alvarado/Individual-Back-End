@@ -66,6 +66,7 @@ public class CustomerServiceImpl implements CustomerService {
                     Address newAddress = new Address();
                     newAddress.setAddress(customerDto.getAddress());
                     newAddress.setCity(city);
+                    newAddress.setDistrict(customerDto.getDistrict());
                     newAddress.setPostalCode(customerDto.getPostalCode());
                     newAddress.setPhone(customerDto.getPhone());
                     newAddress.setLastUpdate(LocalDateTime.now());
@@ -79,7 +80,7 @@ public class CustomerServiceImpl implements CustomerService {
                 .orElseGet(() -> {
                     Country country = new Country();
                     country.setCountry(countryName);
-
+                    country.setLastUpdate(LocalDateTime.now());
                     return countryRepository.save(country);
                 });
     }
