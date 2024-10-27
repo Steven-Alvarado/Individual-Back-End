@@ -16,21 +16,7 @@ import java.util.List;
 public class ActorController {
 
     private ActorService actorService;
-/*
-    //GET actor REST API
-    @GetMapping("{actor_id}")
-    public ResponseEntity<ActorDto> getActorById(@PathVariable("actor_id") Integer actorId) {
-        ActorDto actorDto = actorService.getActorById(actorId);
-        return ResponseEntity.ok(actorDto);
-    }
 
-    //GET all actors REST API
-    @GetMapping
-    public ResponseEntity<List<ActorDto>> getAllActors() {
-        List<ActorDto>   actors = actorService.getAllActors();
-        return ResponseEntity.ok(actors);
-    }
-*/
     //GET top 5 movies
     @GetMapping("/top5")
     public ResponseEntity<List<ActorDto>> getTop5RentedActors() {

@@ -15,7 +15,7 @@ public class FilmCategoryDto {
 
     private Integer categoryId;
     private Integer filmId;
-    private String categoryName;    // The ID of the Category
-    private LocalDateTime lastUpdate;  // Last update time for the FilmCategory entry
+    private String categoryName;
+    private LocalDateTime lastUpdate;
 }
 

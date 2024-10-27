@@ -33,22 +33,22 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerDto createCustomer(CustomerDto customerDto) {
-        // Step 1: Resolve or Create Store Entity
+        //Resolve or Create Store Entity
         Integer storeId = (customerDto.getStoreId() != null) ? customerDto.getStoreId() : DEFAULT_STORE_ID;
         Store store = storeRepository.findById(storeId)
                 .orElseThrow(() -> new ResourceNotFoundException("Store not found with ID: " + storeId));
 
-        // Step 2: Resolve or Create Address, City, and Country
+        //  Resolve or Create Address, City, and Country
         Address address = resolveOrCreateAddress(customerDto);
 
-        // Step 3: Map CustomerDto to Customer Entity
+        // Map CustomerDto to Customer Entity
         Customer customer = CustomerMapper.mapToCustomer(customerDto, store, address);
 
         // Set default or auto-populated values
         customer.setCreateDate(LocalDateTime.now());
         customer.setLastUpdate(LocalDateTime.now());
 
-        // Step 4: Save and Return CustomerDto
+        // Save and Return CustomerDto
         Customer savedCustomer = customerRepository.save(customer);
         return CustomerMapper.mapToCustomerDto(savedCustomer);
     }
@@ -142,10 +142,6 @@ public class CustomerServiceImpl implements CustomerService {
         // Return the updated CustomerDto
         return CustomerMapper.mapToCustomerDto(updatedCustomerObj);
     }
-
-
-// Assume resolveOrCreateCountry and resolveOrCreateCity methods are defined as before
-
 
     public List<Rental> getCustomerRentals(Integer customerId) {
         List<Rental> rentals = rentalRepository.findByCustomerCustomerId(customerId);

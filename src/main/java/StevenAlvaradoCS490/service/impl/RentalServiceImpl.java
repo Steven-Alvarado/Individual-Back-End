@@ -66,7 +66,6 @@ public class RentalServiceImpl implements RentalService {
         rental.setReturnDate(LocalDateTime.now());
         rental.setLastUpdate(LocalDateTime.now()); // Update last update timestamp
 
-        // Save and return the updated rental
-        return rentalRepository.save(rental);
+        return rentalRepository.save(rental); // Return updated rental
     }
 }
