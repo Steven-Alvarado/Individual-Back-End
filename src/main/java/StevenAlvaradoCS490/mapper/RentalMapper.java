@@ -8,8 +8,12 @@ import StevenAlvaradoCS490.entity.Staff;
 
 public class RentalMapper {
 
-    // Mapping from Rental entity to RentalDto
     public static RentalDto mapToRentalDto(Rental rental) {
+        String filmTitle = (rental.getInventory() != null && rental.getInventory().getFilm() != null)
+                ? rental.getInventory().getFilm().getTitle() : null;
+
+    // Mapping from Rental entity to RentalDto
+
         return new RentalDto(
                 rental.getRentalId(),
                 rental.getRentalDate(),
@@ -17,7 +21,8 @@ public class RentalMapper {
                 rental.getCustomer() != null ? rental.getCustomer().getCustomerId() : null,  // Customer ID
                 rental.getReturnDate(),
                 rental.getStaff() != null ? rental.getStaff().getStaffId() : null,  // Staff ID
-                rental.getLastUpdate()
+                rental.getLastUpdate(),
+                filmTitle
         );
     }
 

@@ -2,6 +2,8 @@ package StevenAlvaradoCS490.entity;
 
 import java.math.BigDecimal;
 import java.time.Year;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,6 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "film")
+@JsonIgnoreProperties({"filmCategories", "filmActors"})  // Ignore these to prevent infinite recursion
 public class Film {
 
         @Id

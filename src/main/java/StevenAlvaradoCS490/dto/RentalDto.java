@@ -27,4 +27,5 @@ public class RentalDto {
     private LocalDateTime returnDate;
     private Integer staffId;
     private LocalDateTime lastUpdate;
+    private String filmTitle;
 }

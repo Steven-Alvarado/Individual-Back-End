@@ -1,5 +1,7 @@
 package StevenAlvaradoCS490.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,6 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table(name = "rental")
+
 public class Rental {
 
 
@@ -30,6 +33,7 @@ public class Rental {
     private Inventory inventory;
 
     @ManyToOne
+
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
@@ -38,6 +42,7 @@ public class Rental {
 
     @ManyToOne
     @JoinColumn(name = "staff_id")
+    @JsonIgnore
     private Staff staff;
 
     @Column(name = "last_update")

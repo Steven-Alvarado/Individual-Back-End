@@ -1,4 +1,5 @@
 package StevenAlvaradoCS490.entity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,6 +30,7 @@ public class Category {
     @Column(name = "last_update")
     private LocalDateTime lastUpdate;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "category")
     private List<FilmCategory> filmCategories;
 }

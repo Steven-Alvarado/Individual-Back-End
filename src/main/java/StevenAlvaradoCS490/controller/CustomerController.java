@@ -1,6 +1,8 @@
 package StevenAlvaradoCS490.controller;
 
 import StevenAlvaradoCS490.dto.CustomerDto;
+import StevenAlvaradoCS490.dto.RentalDto;
+import StevenAlvaradoCS490.entity.Rental;
 import StevenAlvaradoCS490.service.CustomerService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -51,5 +53,19 @@ public class CustomerController {
     public ResponseEntity<String> deleteCustomer(@PathVariable("customer_id") Integer customerId) {
         customerService.deleteCustomer(customerId);
         return ResponseEntity.ok("Customer with ID: " + customerId + " deleted successfully");
+    }
+
+    //GET customer rental history
+    @GetMapping("/{customerId}/rentals")
+    public ResponseEntity<List<RentalDto>> getCustomerRentalHistory(@PathVariable Integer customerId) {
+        List<RentalDto> rentalDtos = customerService.getCustomerRentalsAsDto(customerId);
+
+        return ResponseEntity.ok(rentalDtos);
+    }
+
+    //POST return rental
+    @PostMapping("/rentals/{rentalId}/return")
+        public ResponseEntity<Rental> returnRental(@PathVariable Integer rentalId) {
+        return ResponseEntity.ok(customerService.markRentalAsReturned(rentalId));
     }
 }

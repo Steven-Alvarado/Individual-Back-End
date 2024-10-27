@@ -1,4 +1,5 @@
 package StevenAlvaradoCS490.entity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,11 +24,13 @@ public class FilmActor {
     @ManyToOne
     @MapsId("filmId")  // Maps the film_id from the composite key
     @JoinColumn(name = "film_id")
+    @JsonIgnore
     private Film film;
 
     @ManyToOne
     @MapsId("actorId")  // Maps the actor_id from the composite key
     @JoinColumn(name = "actor_id")
+    @JsonIgnore
     private Actor actor;
 
     @Column(name = "last_update")

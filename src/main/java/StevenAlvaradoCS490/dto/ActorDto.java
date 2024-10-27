@@ -21,5 +21,5 @@ public class ActorDto {
     private String firstName;
     private String lastName;
     private LocalDateTime lastUpdate;
-    private List<FilmActor> filmActors;
+    private List<FilmDto> topRentedFilms;
 }

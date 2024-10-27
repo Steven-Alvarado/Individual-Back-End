@@ -1,4 +1,5 @@
 package StevenAlvaradoCS490.entity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,6 +24,7 @@ public class FilmCategory {
     @ManyToOne
     @MapsId("filmId")  // Maps the film_id from the composite key
     @JoinColumn(name = "film_id")
+    @JsonIgnore // prevents infinite recursion
     private Film film;
 
     @ManyToOne

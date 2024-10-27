@@ -9,7 +9,5 @@ import java.util.stream.Collectors;
 
 public interface ActorService {
 
-
-    public List<ActorDto> getTop5Actors() ;
-
+    public List<ActorDto> getTop5ActorsWithTopRentedFilms();
 }

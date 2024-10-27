@@ -19,7 +19,11 @@ public class CustomerDto {
     private String firstName;
     private String lastName;
     private String email;
-    private Integer addressId;
+    private String address;
+    private String city;
+    private String country;
+    private String postalCode;
+    private String phone;
     private List<RentalDto> rentals;
     private LocalDateTime createDate;
     private LocalDateTime lastUpdate;
